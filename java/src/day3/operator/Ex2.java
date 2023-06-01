@@ -11,11 +11,8 @@ public class Ex2 {
 	int score = sc.nextInt();
 	
 	String str;
-	str = score >= 60 ? "true" : "false"; 
+	str = score >= 60 ? "pass" : "fail"; 
 	System.out.println("Do you pass " + score + " points? " + str);
-	
-	
-	
 	sc.close();
 	
 }
