@@ -7,12 +7,13 @@ public class Ex1_conditional {
 	public static void main(String[] args) {
 		System.out.println("input gender : ");
 		Scanner sc=new Scanner(System.in);
-		int gender = sc.nextInt();
+		String gender = sc.next();
 		
-		char str;
-		gender = 'M' ? "false" : "true";
-		System.out.println("are you women?" + gender);
 		
+		String gender1 = "M" != null    ? "false" : "true";
+		System.out.println("are you women?" + gender1);
+		
+		sc.close();
 	}
 
 }
