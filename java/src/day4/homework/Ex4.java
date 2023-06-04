@@ -11,6 +11,20 @@ public class Ex4 {
 		Scanner sc = new Scanner (System.in);
 		
 		
+		int num11, temp , rest ;
+		System.out.println("input number :");
+		Scanner sc1 = new Scanner(System.in);
+		num11 = sc1.nextInt();
+
+		rest=num11 % 2;
+		if (rest == 0 ) {
+			num11 = num11 /2 ;
+			System.out.println(num11);
+		}
+		
+		if (rest ==1) {
+			System.out.println(num11+1);
+		}
 	}
 
 }
