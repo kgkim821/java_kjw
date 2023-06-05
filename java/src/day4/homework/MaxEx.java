@@ -15,6 +15,7 @@ public class MaxEx {
 		num1 = sc.nextInt();
 		num2 = sc.nextInt();
 		
+		
 		if(num1>=num2) {
 			max=num1;
 			System.out.println(max);
@@ -23,7 +24,9 @@ public class MaxEx {
 			max=num2;
 			System.out.println(num2);
 		}
-		System.out.println("The greater number of " + "or "+num2 + "is"+max);
+		max = num1 >= num2 ? num1 : num2; //조건연산자 
+		
+		System.out.println("The greater number of "+num1 + "or "+num2 + "is"+max);
 		sc.close();
 }
 }

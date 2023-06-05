@@ -6,6 +6,7 @@ public class Ex4 {
 
 	public static void main(String[] args) {
 
+		
 		int num1, num2;
 		
 		Scanner sc = new Scanner (System.in);
@@ -25,6 +26,7 @@ public class Ex4 {
 		if (rest ==1) {
 			System.out.println(num11+1);
 		}
+		sc.close();
 	}
 
 }
