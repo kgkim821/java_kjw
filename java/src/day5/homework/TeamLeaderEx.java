@@ -20,18 +20,23 @@ Student number 6 is the team leader.
 		int num;
 		int i;
 		
+		System.out.println("input number :");
 		Scanner sc = new Scanner(System.in);
 		num = sc.nextInt();
 		
 		num = num%3;
-		switch()
+		switch(num)
 		{
 		case 0:
-			System.out.println("");
+			System.out.println(" is the team leader");
+			break;
+			
 		case 1:
-			System.out.println("");
+			System.out.println("is a member of the team");
+			break;
 		case 2:
-			System.out.println("");
+			System.out.println("is a member of the team");
+			break;
 		}
 		
 	}
