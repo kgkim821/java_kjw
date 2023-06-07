@@ -11,11 +11,37 @@ public class DisjointEx {
 		 * 
 		 */
 		
-		int num1, num2 , i=1 , dis=0;
+		int num1, num2 ,i=1, count = 0, gdc=0 ;
 	
 		Scanner sc = new Scanner(System.in);
 		
+		System.out.println("input 2number :");
+		num1=sc.nextInt();
+		num2=sc.nextInt();
 		
-	}
-
+		/*for(i=1;i<=num1;i++) {
+			
+				if (num1 % i == 0 && num2 % i ==0 ) {
+					gdc=i;
+					}
+				if(gdc ==1) {
+				System.out.println("ok");
+				} else {
+					System.out.println("no");
+				}
+			}*/
+		while(i<=num1) {
+			if(num1 % i == 0 && num2 % i == 0) {
+				gdc = i ;
+			}
+			i++;
+		}
+		if (gdc==1) {
+			System.out.println("ok");
+				
+		}else {
+			System.out.println("no");
+		}
+		}
 }
+

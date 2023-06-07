@@ -28,14 +28,14 @@ public class PrimeNumbersEx {
 		for(j=1, count =0; j<=i ; j++){
 		if (i % j ==0) {
 			count++;
-		}
-	}	
+			}
+		}	
 		if(count ==2) {
 		System.out.println(i);
 		
-	}
+			}
 		
-	}
+		}
 	}
 }
 
