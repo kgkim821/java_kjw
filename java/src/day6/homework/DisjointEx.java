@@ -42,6 +42,6 @@ public class DisjointEx {
 		}else {
 			System.out.println("no");
 		}
-		}
+	}
 }
 
