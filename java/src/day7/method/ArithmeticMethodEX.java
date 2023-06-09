@@ -34,7 +34,6 @@ public class ArithmeticMethodEX {
 	 * @param num2
 	 * @return
 	 */
- 
 	public static int sum (int num1, int num2) {
 		return num1 + num2;
 	}
@@ -50,5 +49,4 @@ public class ArithmeticMethodEX {
 	public static int mod(int num1, int num2)	{
 		return num1 % num2;
 	}
-	
 }
