@@ -25,7 +25,7 @@ public class MethodScoreEx {
 			num = 'C';
 		}else if(num >=60 && num<70){
 			num = 'D';
-		}else if(num<60){
+		}else if( num<=0 && num<60){
 			num = 'F';
 		}
 		return (char) num;	}
