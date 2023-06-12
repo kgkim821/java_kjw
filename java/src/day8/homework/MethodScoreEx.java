@@ -8,8 +8,8 @@ public class MethodScoreEx {
 /*
  * 성적을 입력받아 학점을 출력하는 코드를 작성하세요.
  */
-		double score = 80;
-		System.out.println(getGrad(score));
+		double score = 0.0;
+		System.out.println(getGrade(score));
 		int num;
 		Scanner sc = new Scanner(System.in);
 		
@@ -27,11 +27,12 @@ public class MethodScoreEx {
 	 * 메서드명 : getGrade
 	 * */
 	
-	public static String getGrad(double score) {
+	public static String getGrade(double score) {
 		
 		if(score > 100 || score < 0) {
 			return "Wrong score!";
 		}
+		
 		int res = (int)(score/10);
 		/*
 		 * 100점 => a
@@ -41,9 +42,7 @@ public class MethodScoreEx {
 		 * 60 점 => d
 		 * 그외 f
 		 */
-		int res (int scor / 10);
 		switch(res) {
-		case 10 
 		case 9 : return "A";
 		case 8 : return "B";
 		case 7 : return "C";
