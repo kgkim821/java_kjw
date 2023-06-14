@@ -12,6 +12,7 @@ public class PointEx {
 		pt1.move(10, 20);
 		pt1.print();
 		
+		
 
 		Point pt2 = new Point(30,40);
 		pt2.print();
