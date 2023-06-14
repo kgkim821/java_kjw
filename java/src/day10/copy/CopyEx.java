@@ -27,15 +27,17 @@ public class CopyEx {
 		System.out.println(num1 + "," + a2.num1);
 		a2.num1 = 20 ;
 		System.out.println(num1 + "," + a2.num1);
-	
+		/*
+		 * 참조 변수를 복사하려면 복사 생성자를 이용하여 객체를 생성한 후
+		 * 멤버 변수들을 복사하려는 개체의 멤버변수로 초기화
+		 */
 		System.out.println("============");
 		A a3 = new A(a1);
 		System.out.println(num1 + "," + a2.num1);
 		a3.num1 = 50 ;
 		System.out.println(num1 + "," + a2.num1);
-	
-	}
 
+	}
 	
 }
 
