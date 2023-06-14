@@ -45,9 +45,11 @@ public class ArrayCopyEx2 {
 		System.out.println("======");
 		for (Point pt : pointArr) {
 		pt.print();
+		}
 	}
 }
 }
+
 
 class Point{
 	private int x, y ;
