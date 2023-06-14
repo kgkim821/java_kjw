@@ -79,7 +79,7 @@ public class RectEx {
 		 		 */
 		 		public void resize (int x,int y , int w , int h)
 		 		{
-		 			leftUpX =x ;
+		 			leftUpX = x;
 		 			leftUpY = y;
 		 			rightDownX = x + w;
 		 			rightDownY = x + h;
