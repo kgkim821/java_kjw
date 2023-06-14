@@ -15,14 +15,14 @@ public class ArrayCopyEx2 {
 		
 		Point pointArr[] = new Point[5];
 		
-		/*pointArr[0] = new Point(0,0);
+		pointArr[0] = new Point(0,0);
 		pointArr[1] = new Point(10,10);
 		pointArr[2] = new Point(3,4);
 		pointArr[3] = new Point(6,8);
 		pointArr[4] = new Point(-5,-5);
-		*/
+		
 		for(Point pt : pointArr) {
-		//	pt.print();
+			pt.print();
 		}
 		//복사하기 위한 배열
 		Point pointArr2[] = new Point[5];
@@ -38,7 +38,7 @@ public class ArrayCopyEx2 {
 	
 		for (int i=0; i<pointArr.length;i++) {
 		pointArr2[i] = pointArr[i];
-		//pointArr2[i] = new Point(pointArr[i]); // 깊은 복사
+		pointArr2[i] = new Point(pointArr[i]); // 깊은 복사
 		}
 		pointArr2[0].move(-100, -100);
 	
@@ -46,6 +46,7 @@ public class ArrayCopyEx2 {
 		for (Point pt : pointArr) {
 		pt.print();
 	}
+}
 }
 
 class Point{
@@ -67,5 +68,4 @@ class Point{
 	this.x = x;
 	this.y = y;
 	}
-}
 }
