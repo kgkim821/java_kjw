@@ -11,3 +11,4 @@ public class VocabularyNoteEx2 {
 		note.print();
 	}
 }
+
