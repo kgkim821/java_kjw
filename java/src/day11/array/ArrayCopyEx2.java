@@ -48,7 +48,7 @@ public class ArrayCopyEx2 {
 		}
 	}
 }
-}
+
 
 
 class Point{
