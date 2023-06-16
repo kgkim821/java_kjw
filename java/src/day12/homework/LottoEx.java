@@ -19,11 +19,12 @@ import array.Array;
 	 
 		 
 		 int min=1 , max=45 ;
-		 int [] com  = new int[6];
-		 Array.createRandomArray(min, max, com);
-		 System.out.println(com[0]);
-		 System.out.println(com[1]);
-		 System.out.println(com[2]);
+		 int [] lottonum  = new int[6];
+		 Array.createRandomArray(min, max, lottonum);
+		 
+		 sc.close();
+	 
+	 
 	 }
  }
 	/*
