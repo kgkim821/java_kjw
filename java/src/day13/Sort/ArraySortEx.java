@@ -10,7 +10,7 @@ public class ArraySortEx {
 
 		//버블 정렬 예제
 		int arr[] = { 1, 4, 7, 9, 2, 8, 3, 6};
-		
+		Array.printArray(arr);
 		for(int i =0; i< arr.length-1; i++) {
 			for (int j = 0 ; j<arr.length-1-i;j++) {
 				if(arr[j] > arr[j+1]) {
@@ -27,6 +27,7 @@ public class ArraySortEx {
 		//Array.sort(arr2,Comparator.reverseOrder());
 		for(Integer tmp : arr2) {
 			System.out.println(tmp + " ");
+		
 		}
 	}
 }
