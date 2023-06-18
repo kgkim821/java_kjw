@@ -151,7 +151,7 @@ public class VocabularyNote {
 			
 			int index = indexOf(title);
 			if(index == -1){
-				System.out.println("No word fount");
+				System.out.println("No word found");
 				return;
 			}
 			 if(!wordList[index].updateMeaning(meaningIndex,meaning)) {
@@ -167,7 +167,7 @@ public class VocabularyNote {
 		public void updateTitle(String title , String updateTitle) {
 			int index = indexOf(title);
 			if(index == -1){
-				System.out.println("No word fount");
+				System.out.println("No word found");
 				return;
 			}
 			
