@@ -24,6 +24,7 @@ public class ArraySortEx {
 		Integer arr2[] = { 1,4,7,9,2,8,3,6};
 		
 	
+		
 		//Array.sort(arr2,Comparator.reverseOrder());
 		for(Integer tmp : arr2) {
 			System.out.println(tmp + " ");
