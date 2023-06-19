@@ -11,28 +11,30 @@ public class PolyporhismEx1 {
 		 * 
 		 */
 
-		TV tv1 =new TV();
+		TV tv1 = new TV();
 		Radio radio1 = new Radio();
-		AirConditioner aircon = new AirConditioner();
-		RemoteControl remocon = new RemoteControl();
-		remocon.turnOn(tv1);//tv를 켜는 기능
-		remocon.turnOn(aircon);//에어컨을 켜는 기능
-		remocon.turnOn(radio1);//라디오를 켜는 기능
+		AirConditioner aircon1 = new AirConditioner();
+		RemoteControl remocon1 = new RemoteControl();
+		remocon1.turnOn(tv1);//tv를 켜는 기능
+		remocon1.turnOn(aircon1);//에어컨을 켜는 기능
+		remocon1.turnOn(radio1);//라디오를 켜는 기능
 		
 		System.out.println("==================");
 		//매개변수의 다형성을 이용
-		TV tv2 =new TV();
-		Radio radio2 = new Radio();
-		AirConditioner aircon2 = new AirConditioner();
-		RemoteControl remocon2 = new RemoteControl();
-
+		TV1 tv2 = new TV1();
+		Radio1 radio2 = new Radio1();
+		AirConditioner1 aircon2 = new AirConditioner1();
+		RemoteControl1 remocon2 = new RemoteControl1();
 		
 		remocon2.turnOn(tv2);// 가전을 켜는 기능
 		remocon2.turnOn(aircon2);// 가전을 켜는 기능
 		remocon2.turnOn(radio2);// 가전을 켜는 기능
-		//remocon2.turnOff(tv2);// 가전을 켜는 기능
-		//remocon2.turnOff(aircon2);// 가전을 켜는 기능
-		//remocon2.turnOff(radio2);// 가전을 켜는 기능
+		
+		
+		remocon2.turnOff(tv2);// 가전을 켜는 기능
+		remocon2.turnOff(aircon2);// 가전을 켜는 기능
+		remocon2.turnOff(radio2);// 가전을 켜는 기능
+		
 		
 	}
 
@@ -92,28 +94,32 @@ class HomeAppliances{
 class RemoteControl1{
 	public void turnOn(HomeAppliances appliance) {
 		appliance.turnOn();
-		appliance.turnOff();
-		
+		System.out.println("전원이 켜졌습니다.");
 	}
-		
+	public void turnOff(HomeAppliances appliance) {
+		appliance.turnOff();
+		System.out.println("전원이 꺼졌습니다.");
+	}
 }
 
+
+
 class TV1 extends HomeAppliances{
-	boolean power;
+
 	int channel;
 	
 }
 
 class AirConditioner1 extends HomeAppliances{
-	boolean power;
-	double Currenttemperature;
+	double CurrentTemperature;
 	double desiredTemperature;
 	
 }
 
 class Radio1 extends HomeAppliances{
-	boolean power;
+	
 	double frequency;
 	
 }
+
 
