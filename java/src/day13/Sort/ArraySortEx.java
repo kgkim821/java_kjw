@@ -21,17 +21,14 @@ public class ArraySortEx {
 			}
 			Array.printArray(arr);
 		}
-<<<<<<< HEAD
 		Integer arr2[] = { 1,4,7,9,2,8,3,6};
 		
 	
 		
 		//Array.sort(arr2,Comparator.reverseOrder());
-=======
-		Integer arr2[] = {1, 4, 7, 9, 2, 8, 3, 6};
+		//Integer arr2[] = {1, 4, 7, 9, 2, 8, 3, 6};
 		//Arrays.sort(arr2);//오름차순 
 		Arrays.sort(arr2, Comparator.reverseOrder());//내림차순
->>>>>>> 3ea851ea662e343f3dc130893b81219a3a2f507c
 		for(Integer tmp : arr2) {
 			System.out.print(tmp + " ");
 		}
