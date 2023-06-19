@@ -211,9 +211,23 @@ public class VocabularyNoteController {
 				break;
 			//뜻 삭제
 			case 3:
-				
+				//뜻을 삭제할 단어를 입력
+				System.out.println("단어 : ");
+				String title2 = sc.next();
+				//단어를 출력하고 , 단어가 없으면 안내문구 출력후 종료
+				if(!note.search(title2)) {
+					System.out.println("없는 단어입니다.");
+					return;
+				}
+				//수정할 뜻의 번호를 입력
+				System.out.println("수정할 뜻 번호 선택 :");
+				int num2 = sc.nextInt();
+				if(!note.deleteMeaning(title2,num2)) {
+					System.out.println("뜻 삭제 실패");
+				}else {
+					System.out.println("뜻 삭제 성공!");
+				}
 				break;
-				
 			}
 			
 	

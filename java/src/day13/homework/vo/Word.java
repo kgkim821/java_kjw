@@ -56,15 +56,15 @@ public class Word{
 		this.meaning[meaningCount] = meaning;
 		meaningCount++;
 	}
-	/**뜻을 제거하는 메서드
+	/**뜻을 제거하고 제거 여부를 알려주는 메서드
 	 * 매개변수 : 제거할 뜻의 번호 => int num
 	 * 리턴타입 : 없음 => void
 	 * 메서드명 : removeMeaning
 	 */
-	public void removeMeaning(int num) {
+	public boolean removeMeaning(int num) {
 		if(num > meaningCount || num < 1) {
 			System.out.println("I can't work.");
-			return;
+			return false;
 		}
 		//num-1번지부터 하나씩 당겨와서 덮어쓰기함.
 		for(int i = num-1; i < meaningCount-1; i++) {
@@ -74,6 +74,7 @@ public class Word{
 		meaning[meaningCount-1] = null;
 		//제거 됐으면 뜻 개수를 하나 줄임
 		meaningCount--;
+		return true;
 	}
 	
 	/**수정할 뜻의 번지와 수정할 뜻이 주어지면 뜻을 수정하고 수정 여부를 알려주는 메서드
@@ -105,6 +106,10 @@ public class Word{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	/**뜻 번호가 주어지면 뜻을 삭제하고 여부를알려줌
+	 * 
+	 */
 	
 	
 }
