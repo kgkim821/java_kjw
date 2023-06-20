@@ -5,8 +5,8 @@ import lombok.Data;
 public class ClassIngeritanceEx {
 
 	public static void main(String[] args) {
-		/* 스마트폰은 폰이다. => 상ㅇ속
-		 * - 스마트폰 : 자시 클래스
+		/* 스마트폰은 폰이다. => 상속
+		 * - 스마트폰 : 자식 클래스
 		 *  - 폰 : 부모 클래스
 		 *  스마트폰은 카메라를 가지고 있다. => 포함
 		 *  - 스마트폰 : 클래스

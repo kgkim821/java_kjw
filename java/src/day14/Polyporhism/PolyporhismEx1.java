@@ -123,3 +123,7 @@ class Radio1 extends HomeAppliances{
 }
 
 
+//포함 다형성 : 자식 클래스로 만든 객체를 부모클래스가 관리하는 것
+/*
+*
+*/
