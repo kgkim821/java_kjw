@@ -75,8 +75,8 @@ public class Polymorphism {
 				remocon.turnOff(homeAppliance);//다운 캐스팅이 아님 
 				Radio radio = (Radio)homeAppliance;
 				System.out.println(radio.frequency);
+
 			}
-		
 		}
 	}
 }
