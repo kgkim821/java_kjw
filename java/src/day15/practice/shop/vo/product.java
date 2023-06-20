@@ -22,6 +22,8 @@ public class product {
 			this.price = price;
 			this.amount = amount;
 			this.category = category;
+			
+			
 		}
 		
 	//메서드
@@ -40,6 +42,8 @@ public class product {
 		if (amount < 0 ) {
 			return;
 		}
+		
+		
 	//	accmulate(-amount);
 	}
 	private void accumulate (int amount) {
