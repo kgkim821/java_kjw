@@ -2,10 +2,15 @@ package day15.practice.controller;
 
 import java.util.Scanner;
 
+import day15.practice.shop.vo.product;
+
 public class ShopManger {
 
 	private Scanner sc = new Scanner(System.in);
-
+	private product list [] = new product[10];
+	private int count =0;
+	
+	
 	public void run() {
 		System.out.println("프로그램을 start합니다.");
 		
@@ -44,21 +49,89 @@ public class ShopManger {
 		System.out.println("=================");
 		
 		switch(menu) {
-		case 1: System.out.println("제품 판매 기능 구현 예정");
+		case 1:
+			sell();
 			break;
-		case 2:System.out.println("제품 판매 기능 구현 예정");
+		case 2:
+			store();
 			break;
-		case 3:System.out.println("제품 판매 기능 구현 예정");
+		case 3:
+			printProduct();
 			break;
-		case 4:System.out.println("제품 판매 기능 구현 예정");
+		case 4:
+			printSales();
 			break;
-		case 5:System.out.println("제품 판매 기능 구현 예정");
+		case 5:
+			registeCustomer();
 			break;
-		case 6:System.out.println("제품 판매 기능 구현 예정");
+		case 6:
+
 			break;
 		default:
-			
+			System.out.println("잘못된 메뉴");
 		}
+		
+	}
+
+	private void registeCustomer() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void printSales() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void printProduct() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void store() {
+		
+		System.out.print("제품명 :");
+		String name =sc.nextLine();
+		
+		
+		int amount = sc.nextInt();
+		
+		//입고할 제품명 입력
+		if(amount < 0 ) {
+			System.out.println("입고 수량 오류!");
+			return;
+		}
+		
+		int index = indexOf(name);
+		
+		
+		//입고할 제품 수량
+		
+		
+		if(index != -1) {
+			return;
+		}
+		//
+	}
+
+	/**제품리스틍 제품명과 일치하는 제품이 있으면 번지를 , 없으면
+	 * -1을 알려주는 메서드
+	 * 매개변수 : 제품명 => String name
+	 * 리턴타입 : 제품이 있는 번지나 -1 => 정수 => int
+	 * 메서드명 : indexOf
+	 */
+	
+	public int indexOf(String name) {
+		for (int i=0; i< count;i++) {
+			if(list[i].getName().equals(name)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	private void sell() {
+
 		
 	}
 }
