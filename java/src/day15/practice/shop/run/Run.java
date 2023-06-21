@@ -1,6 +1,6 @@
 package day15.practice.shop.run;
 
-import day15.practice.controller.ShopManger;
+import day15.practice.shop.controller.ShopManger;
 
 public class Run {
 
@@ -8,7 +8,8 @@ public class Run {
 		// ShopMaager 를 이용하여 제품을 관리하는 프로그램 실행
 
 		//ms949
-		ShopManger shopmanager1 = new ShopManger();
+		ShopManger shopManager = new ShopManger();
+		shopManager.run();
 		
 	}
 
