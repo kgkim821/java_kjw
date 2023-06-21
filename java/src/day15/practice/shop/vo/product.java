@@ -28,6 +28,15 @@ public class product {
 		
 	//메서드
 		
+		public product(product product) {
+			
+			this.name = name;
+			this.modelName = modelName;
+			this.price = price;
+			this.amount = amount;
+			this.category = category;
+		}
+
 		/**제품 입고 기능 => 현재 수량에 주어진 수량을 누적
 		 */
 		public void store(int amount) {
@@ -48,5 +57,13 @@ public class product {
 	}
 	private void accumulate (int amount) {
 		this.amount+=amount;
+	}
+
+	public void print() {
+		System.out.println("제품명 : "+ name);
+		System.out.println("모델명 : "+ modelName);
+		System.out.println("분류 : "+ category);
+		System.out.println("양 : "+ amount);
+		System.out.println("가격 : "+ price);
 	}
 }
