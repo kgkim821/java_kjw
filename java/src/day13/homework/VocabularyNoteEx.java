@@ -36,7 +36,6 @@ Word, VocabularyNote 클래스 이용
 
 		
 		
-		
 		Scanner sc = new Scanner(System.in);
 		
         int num,num2;
