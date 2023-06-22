@@ -6,7 +6,7 @@ import lombok.Data;
 
 public class ObjectEx {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CloneNotSupportedException {
 
 		Point1 pt1 = new Point1(10,20);
 		System.out.println(pt1);
@@ -14,6 +14,8 @@ public class ObjectEx {
 		Point1 pt11 = new Point1(10,20);
 		System.out.println(pt1== pt11);
 		System.out.println(pt1.equals(pt11));
+		
+		System.out.println("===============");
 		
 		Point2 pt2 = new Point2(30,40);
 		System.out.println(pt2);
@@ -23,6 +25,13 @@ public class ObjectEx {
 		System.out.println(pt2 == pt21);
 		System.out.println(pt2.equals(pt21));
 		
+		System.out.println("===============");
+		//clone()을 이요해서 복제가 제대로 됨
+		Point2 pt22 = (Point2)pt2.clone(); //다운캐스팅 = > (클래스명)을 반드시 추가
+		//주소가 다르지만
+		//두 객체가 같다고 판별
+		System.out.println(pt2 == pt22);
+		System.out.println(pt2.equals(pt22));
 	}
 
 }
@@ -41,7 +50,7 @@ class Point1{
 	
 }
 
-class Point2{
+class Point2 implements Cloneable{
 	
 	private int x, y;
 	
@@ -81,5 +90,7 @@ class Point2{
 		//멤버들을 각각비교해서 같은지를 확인
 		return x == other.x && y == other.y;
 	}
-	
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
 }

@@ -1,5 +1,7 @@
 package day17.object;
 
+import java.util.Objects;
+
 import lombok.Data;
 
 public class EqualsEx {
@@ -21,7 +23,8 @@ public class EqualsEx {
 			}
 		}
 		System.out.println("FAIL");
-		return;
+	
+	
 	}
 
 }
@@ -36,4 +39,17 @@ class Customer{
 		this.phoneNumber = phoneNumber;
 		
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		return Objects.equals(phoneNumber, other.phoneNumber);
+	}
+
 }
