@@ -8,10 +8,10 @@ public class Sales {
 
 	
 	private Customer customer;
-	private product product;
+	private Product product;
 	private int totalPrice;//판매 내역의 총 금액(전체 내역의 총 금액이 아님)
 	
-	public Sales(Customer customer , product product) {
+	public Sales(Customer customer , Product product) {
 		this.customer = customer;
 		this.product = product;
 		totalPrice = product.getAmount() * product.getPrice();
