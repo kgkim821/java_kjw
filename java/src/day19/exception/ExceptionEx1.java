@@ -1,4 +1,4 @@
-package day19;
+package day19.exception;
 
 public class ExceptionEx1 {
 
