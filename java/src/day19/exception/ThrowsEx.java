@@ -23,7 +23,6 @@ public class ThrowsEx {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
-		System.out.println("exit");
 	}
 	
 	//try-catch를 이용하여 예외를 직접 처리
@@ -52,9 +51,3 @@ public class ThrowsEx {
 		}
 	}
 }
-
-
-
-
-
-
