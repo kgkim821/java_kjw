@@ -12,6 +12,11 @@ public class SetEx {
 		set.add(30);
 		System.out.println(set);
 		
+		set.remove(10);
+		System.out.println(set);
+		System.out.println(set.contains(20));
+		System.out.println(set.size());
+		
 	}
 
 }
