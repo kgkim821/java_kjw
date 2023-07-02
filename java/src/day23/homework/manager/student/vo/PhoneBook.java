@@ -1,18 +1,23 @@
-package day22.practice.phone.vo;
+package day23.homework.manager.student.vo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class PhoneBook {
+public class PhoneBook implements Serializable { 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2483453176608982883L;
 	//전화번호 리스트
 	private List<PhoneNumber> list = new ArrayList<>();
 	
 	//전화번호 추가
-	public boolean insertPhone(String name, String number) {
+	public boolean insertPhone(String name, String number,String grade) {
 		//이름과 전화번호를 이용하여 전화번호 객체를 생성
-		PhoneNumber pn = new PhoneNumber(name, number);
+		PhoneNumber pn = new PhoneNumber(name, number, grade);
 		//전화번호가 비어 있으면 => 전화번호 패턴에 맞지 않으면 저장 X
 		if(pn.getNumber().length() == 0) {
 			return false;
@@ -23,10 +28,10 @@ public class PhoneBook {
 	}
 	
 	//전화번호 수정 : 이름
-	public boolean updateName(String name, String updateName) {
+	public boolean updateName(String name, String updateName, String grade) {
 		//name과 일치하는 전화번호를 찾아야함
 		//전화번호부에 수정할 이름에 해당하는 전화번호가 어디에 있는지 확인 
-		int index = list.indexOf(new PhoneNumber(name,""));
+		int index = list.indexOf(new PhoneNumber(name,"",""));
 		//없으면 수정이 안됨 => 메서드를 종료
 		if(index == -1) {
 			return false;
@@ -55,10 +60,9 @@ public class PhoneBook {
 	}
 	
 	//전화번호 수정 : 번호
-	
-	public boolean updateNumber(String name, String number) {
+	public boolean updateNumber(String name, String number, String grade) {
 		//name과 일치하는 전화번호부를 찾음
-		int index = list.indexOf(new PhoneNumber(name, number));
+		int index = list.indexOf(new PhoneNumber(name, number, grade));
 		//일치하는 전화번호부가 없으면 수정 실패
 		if(index == -1) {
 			return false;
@@ -76,9 +80,8 @@ public class PhoneBook {
 		return true;
 	}
 	//전화번호 수정 : 이름, 번호
-	
-	public boolean update(String name, String updateName, String number) {
-		PhoneNumber pn = new PhoneNumber(name, number);
+	public boolean update(String name, String updateName, String number , String grade) {
+		PhoneNumber pn = new PhoneNumber(name, number, grade);
 		//name을 이용하여 전화번호부 검색
 		int index = list.indexOf(pn);
 		//없으면 수정 실패
@@ -97,10 +100,9 @@ public class PhoneBook {
 		return true;
 	}
 	//전화번호 삭제 
-	
 	public boolean delete(String name) {
 		//name으로 PhoneNumber 객체를 생성 후 삭제 요청
-		return list.remove(new PhoneNumber(name, ""));
+		return list.remove(new PhoneNumber(name, "", ""));
 	}
 	//전화번호 출력
 	public void print(Predicate<PhoneNumber> p) {

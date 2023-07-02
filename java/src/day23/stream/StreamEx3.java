@@ -11,7 +11,7 @@ public class StreamEx3 {
 	public static void main(String[] args) {
 
 		
-		try(FileInputStream fis = new FileInputStream("test.txt") ;
+		try(FileInputStream fis = new FileInputStream("test1.txt") ;
 			
 			BufferedInputStream bis = new BufferedInputStream(fis);
 			InputStreamReader isr = new InputStreamReader(bis)){

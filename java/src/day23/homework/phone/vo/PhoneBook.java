@@ -1,11 +1,16 @@
-package day22.practice.phone.vo;
+package day23.homework.phone.vo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class PhoneBook {
+public class PhoneBook implements Serializable { 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2483453176608982883L;
 	//전화번호 리스트
 	private List<PhoneNumber> list = new ArrayList<>();
 	
@@ -55,7 +60,6 @@ public class PhoneBook {
 	}
 	
 	//전화번호 수정 : 번호
-	
 	public boolean updateNumber(String name, String number) {
 		//name과 일치하는 전화번호부를 찾음
 		int index = list.indexOf(new PhoneNumber(name, number));
@@ -76,7 +80,6 @@ public class PhoneBook {
 		return true;
 	}
 	//전화번호 수정 : 이름, 번호
-	
 	public boolean update(String name, String updateName, String number) {
 		PhoneNumber pn = new PhoneNumber(name, number);
 		//name을 이용하여 전화번호부 검색
@@ -97,7 +100,6 @@ public class PhoneBook {
 		return true;
 	}
 	//전화번호 삭제 
-	
 	public boolean delete(String name) {
 		//name으로 PhoneNumber 객체를 생성 후 삭제 요청
 		return list.remove(new PhoneNumber(name, ""));

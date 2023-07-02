@@ -1,8 +1,13 @@
-package day22.practice.phone.controller;
+package day23.homework.phone.controller;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
-import day22.practice.phone.vo.PhoneBook;
+import day23.homework.phone.vo.PhoneBook;
 
 public class PhoneManager implements Program {
 
@@ -16,6 +21,8 @@ public class PhoneManager implements Program {
 		System.out.println("2. Update");
 		System.out.println("3. Search");
 		System.out.println("4. EXIT");
+		System.out.println("5. Save");
+		System.out.println("6. Load");
 		System.out.print("Select Menu : ");
 	}
 
@@ -47,6 +54,15 @@ public class PhoneManager implements Program {
 		case 4:
 			System.out.println("EXIT!!");
 			break;
+		case 5: 
+			save();
+			break;
+		case 6:
+			load();
+			break;
+			
+			
+			
 		default:
 			System.out.println("Wrong Menu!!");
 		}
@@ -100,6 +116,33 @@ public class PhoneManager implements Program {
 		//실패하면 실패했다고 출력
 		else {
 			System.out.println("Insert Fail!!");
+		}
+		
+	}
+
+	@Override
+	public void load() {
+		try(FileInputStream fis = new FileInputStream("phone_book.txt");
+			ObjectInputStream ois = new ObjectInputStream(fis)){
+
+			pb = (PhoneBook)ois.readObject();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public void save() {
+		try(FileOutputStream fos = new FileOutputStream("phone_book.txt");
+			ObjectOutputStream oos = new ObjectOutputStream(fos)){
+			oos.writeObject(pb);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 	}

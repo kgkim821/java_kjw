@@ -17,35 +17,32 @@ import lombok.Data;
 public class SerializableEx1 {
 
 	public static void main(String[] args) {
-
-		Student std1 = new Student(1, 1, 1, "Hong"," ") ;
-		Student std2 = new Student(1, 1, 2, "Lim"," ");
+		Student std1 = new Student(1, 1, 1, "Hong");
+		Student std2 = new Student(1, 1, 2, "Lim");
 		
 		try(
-				FileOutputStream fos = new FileOutputStream("student.txt");
-				ObjectOutputStream oos  =new ObjectOutputStream(fos)){
+			FileOutputStream fos = new FileOutputStream("student.txt");
+			ObjectOutputStream oos = new ObjectOutputStream(fos)){
 				oos.writeObject(std1);
 				oos.writeObject(std2);
-		} 
-		 catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		List<Student> list = new ArrayList<>();
 		try(ObjectInputStream ois 
-				= new ObjectInputStream(new FileInputStream("stuent.txt"))){
-
+			= new ObjectInputStream(new FileInputStream("student.txt"))){
 			while(true) {
 				Student tmp = (Student)ois.readObject();
 				list.add(tmp);
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		}catch(EOFException e) {
-		System.out.println("File Read Complete!");	
-		}catch (IOException e) {
+		} catch (EOFException e) {
+			System.out.println("Finished reading the file!!");
+		} catch (IOException e) {
 			e.printStackTrace();
-		}catch (ClassNotFoundException e) {
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} 
 		System.out.println(list);
@@ -57,13 +54,9 @@ public class SerializableEx1 {
 @AllArgsConstructor
 class Student implements Serializable{
 	
-	
 	private static final long serialVersionUID = 6460088211137244719L;
-
 	
-	private int grade , classNum, num;
+	private int grade, classNum, num;
 	private String name;
-	private transient String regisString;
 	
 }
-
