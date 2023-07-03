@@ -34,7 +34,7 @@ public class OutputStreamEx {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 		try(
 			FileInputStream fis = new FileInputStream("output2.txt");
 			ObjectInputStream ois = new ObjectInputStream(fis)){
