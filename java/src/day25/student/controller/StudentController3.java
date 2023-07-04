@@ -9,15 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import day23.homework.phone.vo.PhoneBook;
 import day25.student.vo.Student;
 
 public class StudentController3 {
 
 	private Scanner sc = new Scanner(System.in);
 	private List<Student> list = new ArrayList<Student>();
-	private Student pb = new Student();
-	
+	private Student pb;
 	
 	public void run() {
 		
@@ -39,9 +37,9 @@ public class StudentController3 {
 		System.out.println("1. 학생등록");
 		System.out.println("2. 학생확인");
 		System.out.println("3. 종료");
-		System.out.println("4. 저장");
-		System.out.println("5. 출력");
 		System.out.print("메뉴 선택 : ");
+		System.out.println("4. 저장");
+		System.out.println("5. 로드");
 	}
 	
 	private void runMenu(int menu) {
@@ -56,12 +54,11 @@ public class StudentController3 {
 			break;
 		case 3:
 			break;
-			
 		case 4:
-			save();
+			load();
 			break;
 		case 5:
-			load();
+			save();
 			break;
 		default:
 		}
@@ -92,18 +89,9 @@ public class StudentController3 {
 			System.out.println(tmp2);
 		}
 	}
-	public void save() {
-		try(FileOutputStream fos = new FileOutputStream("student_book.txt");
-			ObjectOutputStream oos = new ObjectOutputStream(fos)){
-			oos.writeObject(pb);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-	}
 	
 	public void load() {
-		try(FileInputStream fis = new FileInputStream("student_book.txt");
+		try(FileInputStream fis = new FileInputStream("student_list.txt");
 			ObjectInputStream ois = new ObjectInputStream(fis)){
 
 			pb = (Student)ois.readObject();
@@ -111,10 +99,20 @@ public class StudentController3 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
-	
+
+	public void save() {
+		try(FileOutputStream fos = new FileOutputStream("student_list.txt");
+			ObjectOutputStream oos = new ObjectOutputStream(fos)){
+			oos.writeObject(pb);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
 }
+

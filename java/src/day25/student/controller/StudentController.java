@@ -12,7 +12,7 @@ public class StudentController {
 		Scanner sc = new Scanner(System.in);
 		int menu;
 		String name, num, major;
-		List<Student> list = new ArrayList<Student>();
+		List<Student> list = new ArrayList<Student>();  
 		Student tmp;
 		do {
 			//메뉴 출력

@@ -1,33 +1,50 @@
 package day25.student.vo;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Student {
-	private int grade, classNum, num;
-	private String name;
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Student other = (Student) obj;
-		return classNum == other.classNum && grade == other.grade && Objects.equals(name, other.name)
-				&& num == other.num;
-		//return classNum == other.classNum && grade == other.grade && num == other.num;
-	}
-	@Override
-	public int hashCode() {
-		return Objects.hash(classNum, grade, name, num);
-		//return Objects.hash(classNum, grade, num);
-	}
-	public void update(int grade, int classNum, int number, String name) {
-		this.grade = grade;
-		this.classNum = classNum;
-		this.num = number;
+public class Student implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String num, name, major;
+
+	public Student(String num, String name, String major) {
+		this.num = num;
 		this.name = name;
+		this.major = major;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "학번 : " + num + "\n이름 : " + name + "\n전공 : " + major;
+	}
+
+	public String getNum() {
+		return num;
+	}
+
+	public void setNum(String num) {
+		this.num = num;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
 	}
 	
 	

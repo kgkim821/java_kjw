@@ -1,6 +1,5 @@
 package day25.student.run;
 
-import day25.student.controller.StudentController;
 import day25.student.controller.StudentController2;
 
 public class Run2 {
