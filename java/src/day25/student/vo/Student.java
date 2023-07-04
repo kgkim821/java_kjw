@@ -16,12 +16,12 @@ public class Student {
 		Student other = (Student) obj;
 		return classNum == other.classNum && grade == other.grade && Objects.equals(name, other.name)
 				&& num == other.num;
-		return classNum == other.classNum && grade == other.grade && num == other.num;
+		//return classNum == other.classNum && grade == other.grade && num == other.num;
 	}
 	@Override
 	public int hashCode() {
 		return Objects.hash(classNum, grade, name, num);
-		return Objects.hash(classNum, grade, num);
+		//return Objects.hash(classNum, grade, num);
 	}
 	public void update(int grade, int classNum, int number, String name) {
 		this.grade = grade;
@@ -31,5 +31,4 @@ public class Student {
 	}
 	
 	
-}
 }
