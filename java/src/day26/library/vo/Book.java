@@ -6,41 +6,32 @@ import java.util.Objects;
 import lombok.Data;
 
 @Data
-public class Book implements Serializable{
-
+public class Book implements Serializable {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 6921020285454466793L;
-	//도서번호 : 도서관에서 지정
-	//도서명 , 저자 , isbn
+	private static final long serialVersionUID = 7054033506087668340L;
+	//도서번호 : 도서관에서 지정, 
+	//도서명, 저자, isbn
+	private String num, title, author, isbn;
+	private boolean loan;//대출 여부
 	
-	private String num,title,writer,isbn;
-
-	private boolean loan; //대출 여부
-	
-
-	@Override
 	public String toString() {
-		return "도서번호: " + num + "\n"+
-				"도서제목 : " + title+ "\n"+
-				"저자 : " + writer+ "\n"+
-				"isbn : " + isbn+ "\n";
+		return 	"도서번호 : " + num + "\n" +
+				"도서제목 : " + title + "\n" +
+				"도서저자 : " + author + "\n" +
+				"ISBN   : " + isbn;
 	}
 
-	public Book(String num, String title, String writer, String isbn ) {
-		this.title = title;
-		this.writer = writer;
-		this.isbn = isbn;
+	public Book(String num, String title, String author, String isbn) {
 		this.num = num;
+		this.title = title;
+		this.author = author;
+		this.isbn = isbn;
 	}
-
 	public void loanBook() {
-		this.loan=true;//setLoan(true);
+		this.loan = true; //setLoan(true);
 	}
 	public void returnBook() {
-		this.loan=false;//setLoad(false);
+		this.loan = false;//setLoan(false);
 	}
 
 	@Override
@@ -59,6 +50,5 @@ public class Book implements Serializable{
 	public int hashCode() {
 		return Objects.hash(num);
 	}
-
 	
 }
