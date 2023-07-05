@@ -1,6 +1,8 @@
 package day25.student.controller;
 
+import java.io.EOFException;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -16,11 +18,13 @@ public class StudentController3 {
 	private Scanner sc = new Scanner(System.in);
 	private List<Student> list = new ArrayList<Student>();
 	private Student pb;
+	String filename = "";
 	
 	public void run() {
 		
 		int menu;
 		
+		load(filename);
 		do {
 			//메뉴 출력
 			printMenu();
@@ -30,6 +34,7 @@ public class StudentController3 {
 			runMenu(menu);
 			
 		}while(menu != 3);
+		save(filename);
 		sc.close();
 	}
 	private void printMenu() {
@@ -55,10 +60,10 @@ public class StudentController3 {
 		case 3:
 			break;
 		case 4:
-			load();
+			load(filename);
 			break;
 		case 5:
-			save();
+			save(filename);
 			break;
 		default:
 		}
@@ -90,28 +95,40 @@ public class StudentController3 {
 		}
 	}
 	
-	public void load() {
-		try(FileInputStream fis = new FileInputStream("student_list.txt");
-			ObjectInputStream ois = new ObjectInputStream(fis)){
-
-			pb = (Student)ois.readObject();
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void load(String filename) {
+		try(ObjectInputStream ois 
+				= new ObjectInputStream(new FileInputStream(filename))){
+				while(true) {
+					Student tmp = (Student)ois.readObject();
+					list.add(tmp);
+				}
+			} catch (FileNotFoundException e) {
+				System.out.println("불러올 파일이 없습니다.");
+			} catch (EOFException e) {
+				System.out.println("불러오기 완료!");
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				//objectInputStream을 객체단위로 이용하여 읽어올 때 클래스가 
+				//serializable 인터페이스를 구현하지 않으면 발생 
+				System.out.println("Student 클래스를 찾을 수 없습니다.");
+			} 
+			System.out.println(list);
 		
 	}
 
-	public void save() {
-		try(FileOutputStream fos = new FileOutputStream("student_list.txt");
-			ObjectOutputStream oos = new ObjectOutputStream(fos)){
-			oos.writeObject(pb);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public void save(String filename) {
+		//학생정보를 저장 => 리스트 => 하나씩꺼내서 저장
+		//저장=>
+		try(
+		FileOutputStream fos = new FileOutputStream(filename);
+		ObjectOutputStream oos = new ObjectOutputStream(fos)){
+			for(Student tmp :list) {
+				oos.writeObject(tmp);
+			}
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
 		
 	}
 }
