@@ -44,6 +44,14 @@ public class LibraryController {
 		sc.close();
 	}
 
+	private void saveloan() {
+		
+	}
+	private void loadloan() {
+		
+	}
+	
+	
 	private void saveBook(String fileName) {
 		try(FileOutputStream fos = new FileOutputStream(fileName);
 			ObjectOutputStream oos = new ObjectOutputStream(fos)){
@@ -96,38 +104,29 @@ public class LibraryController {
 	}
 
 	private void retrunBook() {
-		sc.nextLine(); // Clear the input buffer
-	    System.out.print("도서 번호 : ");
-	    String num = sc.nextLine();
-
-	    // Find the book in the bookList
-	    Book book = null;
-	    for (Book b : bookList) {
-	        if (b.getNum().equals(num)) {
-	            book = b;
-	            break;
-	        }
-	    }
-
-	    // Check if the book exists and is on loan
-	    if (book != null && book.isLoan()) {
-	        // Remove the loan record from the loanList
-	        LoanBrowsing loanRecord = null;
-	        for (LoanBrowsing loan : loanList) {
-	            if (loan.getBook().equals(book)) {
-	                loanRecord = loan;
-	                break;
-	            }
-	        }
-	        loanList.remove(loanRecord);
-
-	        // Set the loan status of the book to false
-	        book.returnBook();
-
-	        System.out.println("도서가 반납되었습니다.");
-	    } else {
-	        System.out.println("해당 도서는 대출 중이 아닙니다.");
-	    }
+		//반납도서 번호를 입력
+		sc.nextLine();
+		System.out.println("도서 번호 :");
+		String num = sc .nextLine();
+		
+		int index =bookList.indexOf(new Book(num,null,null,null));
+		if(index == -1) {
+			System.out.println("대출한 도서가 아닙니다.");
+			return;
+		}
+		//맞으면 반납
+		//대출열람 리스트에서 대출한 도서에 반납일을 오늘날짜로 수정
+		Book returnBook = bookList.get(index);
+		returnBook.returnBook();
+		//반납한 도서의 상태를 대출 가능으로 수정
+		//반납한 도서의 대출 열람을 찾아야 함.
+		
+		int lbIndex = loanList.lastIndexOf(new LoanBrowsing(returnBook, null, 14));
+		LoanBrowsing tmpLb = loanList.get(lbIndex);
+		tmpLb.setReturnDate(new Date());
+		
+		System.out.println("대출일 : "+ tmpLb.getLoanDateStr());
+		System.out.println("반남일 : " +tmpLb.getReturnDateStr());
 	}
 
 	private void loanBook() {
@@ -183,6 +182,7 @@ public class LibraryController {
 		//대출일을 출력
 		System.out.println("대출일 : " + lb.getLoanDateStr());
 		//반납예정일 출력
+		System.out.println("반납일" + lb.getEstimatedDate());
 	}
 
 	private void insertBook() {
@@ -199,6 +199,12 @@ public class LibraryController {
 		
 		//입력 정보를 이용하여 도서 객체를 생성
 		Book book = new Book(num, title, author, isbn);
+		
+		if(bookList.contains(book)) {
+			System.out.println("이미 등록된 도서 번호입니다. 확인해주세요.");
+			return;
+		}
+		
 		
 		//도서 리스트에 도서 객체를 추가
 		bookList.add(book);
