@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>map 태그 예제</title>
+</head>
+<body>
+	
+	<!-- 
+		map
+		-이미지 맵을 정의 할 떄 사용
+		-클릭할 수 있는 영역을 정의할 때 사용
+		-map 태그에 name 을 지정하고 ,img태그에 usemap속성 값으로 map 태그의 name 앞에 #을 
+		붙여줌
+		-area 태그를 이요하여 영역을 지정
+		area
+		-영역을 지정할 떄 사용
+		-shape 속성
+			-영역 모양
+			- default, rect , circle , poly
+			coords 속성
+			- 영역의 좌표
+			- shape에 따라 좌표 개수가 달라짐
+			href 속성
+			-영역을 클릭했을 때 넘어갈 링크
+			alt
+			- 실행되지 않을 떄 대체될 문자열
+			target 속성
+			-링크가 실행될 페이지의 위치를 지정하는 속성
+			- _self : 기본값, 현재 페이지
+			- _blank : 새페이지
+			- _parent:부모페이지
+			-_top:최상위 조상 페이지
+	 -->
+	<img src="../img/강아지/강아지.jpg" alt="강아지 이미지" usemap="#dog">
+	<map name="dog">
+		<area target="_parent" shape="rect" coords="400,300,1600,1200" href="https://www.google.com/search?q=%EA%B0%95%EC%95%84%EC%A7%80&rlz=1C1IBEF_koKR1059KR1060&oq=%EA%B0%95%EC%95%84%EC%A7%80&gs_lcrp=EgZjaHJvbWUqEAgAEAAYgwEY4wIYsQMYgAQyEAgAEAAYgwEY4wIYsQMYgAQyDQgBEC4YgwEYsQMYgAQyCggCEAAYsQMYgAQyDQgDEC4YgwEYsQMYgAQyBggEEAAYAzINCAUQABiDARixAxiABDIKCAYQABixAxiABDINCAcQABiDARixAxiABDIHCAgQABiABDINCAkQLhiDARixAxiABNIBDTIxNTA2MDE3ajBqMTWoAgCwAgA&sourceid=chrome&ie=UTF-8" alt="강아지 검색">
+		<!-- <area shape="poly" coords="400,300,1600,1200" href="https://www.google.com/search?q=%EA%B0%95%EC%95%84%EC%A7%80&rlz=1C1IBEF_koKR1059KR1060&oq=%EA%B0%95%EC%95%84%EC%A7%80&gs_lcrp=EgZjaHJvbWUqEAgAEAAYgwEY4wIYsQMYgAQyEAgAEAAYgwEY4wIYsQMYgAQyDQgBEC4YgwEYsQMYgAQyCggCEAAYsQMYgAQyDQgDEC4YgwEYsQMYgAQyBggEEAAYAzINCAUQABiDARixAxiABDIKCAYQABixAxiABDINCAcQABiDARixAxiABDIHCAgQABiABDINCAkQLhiDARixAxiABNIBDTIxNTA2MDE3ajBqMTWoAgCwAgA&sourceid=chrome&ie=UTF-8" alt="강아지 검색"> -->
+	
+	</map>
+</body>
+</html>
