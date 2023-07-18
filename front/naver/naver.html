@@ -74,8 +74,17 @@
 		
 		.shcrtcut-area{
 			width: 676px; margin: 72px auto 0;
-			background-color: red; height: 50px;
-		}
+			}
+
+			.shcrtcut-area>.shcrtcut-list>.shcrtcut-item{
+				float: left;
+			}
+			.shcrtcut-area>.shcrtcut-list .link-service span{
+				display: block;
+			}
+			.shcrtcut-area>.shcrtcut-list .link-service .icon-service::before{
+				
+			}
 		/* 컨텐츠 영역 */
 		#container{
 			width : 1280px;
@@ -120,7 +129,16 @@
 		</div>
 	
 		<!-- 검색창 끝 -->
-		<div class="shcrtcut-area"></div>
+		<div class="shcrtcut-area">
+			<ul class="shortcut menu-list clearfix">
+				<li class="shortcut-item">
+					<a href="#" class="link-service">
+						<span class="icon-service mail"></span>
+						<span class="name-service">메일</span>
+					</a>
+				</li>
+			</ul>
+		</div>
 		<!-- 메뉴 끝 -->
 	</header>
 	<div id="container"></div>
