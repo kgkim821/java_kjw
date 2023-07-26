@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>get</title>
+	<script src="../js/jquery.min.js"></script>
+</head>
+<body>
+	<script>
+		let html =$('box').html();
+		let text =$('box').text();
+		console.log(html);
+		console.log(text);
+		
+		$('btn-search').click(()=>{
+			let val = $('.input-search').val();
+			console.log(val);
+		});
+
+		/*$('선택자').html(html코드):
+
+
+		*/
+		$('span').text('만나서 반갑습니다.');
+		$('span').html('<h1>만나서 반갑습니다.<h1>');
+		
+	</script>
+
+</body>
+</html>

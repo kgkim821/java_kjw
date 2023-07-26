@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>객체 에제</title>
+</head>
+<body>
+	<script>
+		/*
+		객체는 속성과 메서드로 구성
+		*/ 
+
+		var student = {
+			name : '홍길동', 'kor':100 , toString : function(){
+				return this.name + ' : ' + this.kor;
+			}
+		};
+		console.log(student.toString());
+	</script>
+</body>
+</html>

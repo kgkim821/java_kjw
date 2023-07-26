@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>요소선택</title>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div id="box"></div>
+	 <input type="text" name="" id="">
+
+	 <script>
+		/*
+		document.getElementById('아이디명a'):
+		-아이디명이 아이디명A 인 요소를 선택
+		-하나 있거나 없거나
+		document.getElementsByClassName('클래스명'):
+		-클래스명이 일치하는 요소들을 선택
+		documnet.getElementsByTagName('태그명')
+		- 태그명이 일치하는 요소들을 선택
+		documnet.querySelector('선택자');
+		-선택자와 일치하는 첫번째 요소를 선택
+		documnet.querySelectorAll('선택자');
+		- 선택자와 일치하는 모든 요소를 선택
+		*/
+		let eleId = document.getElementById('Box');
+		let elbox = document.getElementById('Box');
+		let eltag = document.getElementById('Box');
+
+		eleId.style.backgroundColor = 'red';
+		eleId.style.height = '100px';
+		elbox.style.backgroundColor = 'blue';
+		elbox.style.height='100px';
+	 </script>
+</body>
+</html>
