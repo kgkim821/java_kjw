@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+</head>
+<body>
+	<input type="text" id="id" name="id">
+<script>
+	$('#id').change(function(){
+console.log('내용이 변경됐습니다.')
+	});
+
+	$('#id').select(function(){
+console.log('내용이 선택됐습니다.')
+	});
+	/*
+	submit()
+	-서버에 내용을 전송할 때 발생하는 이벤트
+	-return 값이 false이면 
+	-회원가입 시 유효성 체크 할 때 많이 사용
+	*/
+	$('form').submit(function(){
+		console.log('서버에 전송하지 않습니다.');
+		return false;
+	});
+</script>
+</body>
+</html>

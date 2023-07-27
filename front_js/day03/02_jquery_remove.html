@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>요소 제거</title>
+</head>
+<style>
+	.box{
+		background-color: gray; padding: 20px; margin-bottom: 50px;
+	}
+	.inner-box{
+		background-color: yellow;height: 100px;
+	}
+</style>
+<body>
+	<button class="btn-empty">empty</button>
+	<button class="btn-remove">remove</button>
+	<div class="box box1">
+		<div class="inner-box"></div>
+	</div>
+	<div class="box box2">
+		<div class="inner-box"></div>
+	</div>
+
+	<script>
+		/*
+		empty(): 요송ㄴ에 있는 자ㅗㄴ 요소들을 제거
+		remove() 
+		*/
+		$('.btn-empty').click(function(){
+			$('.box1').empty();
+		});
+		$('.btn-remove').click(function(){
+			$('.box2').remove();
+		});
+	</script>
+</body>
+</html>
