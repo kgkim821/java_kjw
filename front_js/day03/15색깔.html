@@ -38,6 +38,20 @@
 	.box2{background: blue;}
 	.box3{background: yellow;}
 
+	.box-page{
+		display: flex; justify-content: space-between;
+	}
+
+.btn-prev,.btn-next{
+	position: absolute; top: 0; width: 50px; height: 50px; border: 3px solid black;
+	text-align: center; line-height: 30px;left: 0; text-decoration: none;
+	color: black;
+}
+.btn-next{
+	left: auto; right: 0;
+}
+
+
 </style>
 <body>
 	<ul class="list-menu">
@@ -51,12 +65,13 @@
 			<a href="#" class="link-menu">메뉴3</a>
 		</li>
 	</ul>	
-	<ul>
-		<button class="btn1"><</button>
-		
-		<button class="btn2">></button>
-	</ul>
-
+<div class="box-page">
+	<a href="#" class="btn-prev"></a>
+	<div class="box-page-num">
+		<span class="page-current">1</span>
+		<span class="page-max">3</span>
+	</div>
+</div>
 	<ul class="list-box">
 		<li class="item-box box1"></li>
 		<li class="item-box box2"></li>
@@ -72,9 +87,16 @@
 			$(this).addClass('active');
 			$('.item-menu').first().click();
 		});
-		$('.btn1').click(function{
-			$('.item-menu').
-		})
+		const MAX_PAGE = $('item-menu').length;
+		$('item-menu').eq(page-1).click();
+
+		$('.btn-prev').click(function(){
+			page = --page == 0 ? MAX_PAGE : page;
+		});
+				$('.btn-next').click(function(){
+			page = ++page > MAX_PAGE ?  1 : page;
+		});
+
 	</script>
 </body>
 </html>
