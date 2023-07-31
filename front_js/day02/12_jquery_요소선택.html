@@ -17,31 +17,29 @@
 	<button class="btn3">toggle()</button>
 	<div class="box"></div>
 	<script>
-		// 요소선택
-		/*-$('선택자')
+		/* 
+		요소 선택
+		- $('선택자')
 		이벤트 등록
-		-$('선택자').이벤트명 (function(){
+		$('선택자').이벤트명(function(){
 			//구현
 		});
-		-$('선택자').on('이벤트명' function(){
+		$('선택자').on('이벤트명', function(){
 			//구현
 		});
+		$(document).on('이벤트명', '선택자', function(){
 
-		-$('선택자').on('이벤트명' , '선택자' function(){
-			//구현
 		});
-
 		*/
 		$('.btn1').click(function(){
 			$('.box').show();
 		});
-		$('btn2').on('click',function(){
+		$('.btn2').on('click', function(){
 			$('.box').hide();
 		});
 		$(document).on('click','.btn3',function(){
 			$('.box').toggle();
 		});
-
 	</script>
 </body>
 </html>

@@ -10,16 +10,15 @@
 	<input type="text" id="id">
 	<div class="box"></div>
 	<script>
-		let regex =/^\d{5,8}$/;
+		let regex = /\d{5,8}/;
 		$('#id').change(function(){
 			let text = $(this).val();
 			if(regex.test(text)){
 				$('.box').text('정규표현식에 맞습니다.');
 			}else{
-				$('.box').text('숫자만 입력하세요');
+				$('.box').text('숫자만 5~8자 입력하세요.');
 			}
 		});
-
 	</script>
 </body>
 </html>
