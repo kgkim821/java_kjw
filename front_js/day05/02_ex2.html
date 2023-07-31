@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ex2</title>
+	<script src="../js/jquery.min.js"></script>
+</head>
+<body>
+	<ul>
+		<li>항목1</li>
+		<li>항목2</li>
+		<li>항목3</li>
+	</ul>
+	<button class="btn">항목 1 클릭</button>
+	<button class="btn2">버튼2</button>
+	<button class="btn3">버튼3</button>
+	<script>
+		/*
+		$('.btn').click(()=>$('li').first().css('background-color','yellow'));
+		$('.btn2').click(()=>$('li').eq(1).css('background','red'));
+		$('.btn3').click(()=>$('li').css('background','pink'));
+		*/
+		$('.btn').click(function(){
+			$('li').css('background-color','white');
+			// 눌린 버튼이 .btn 중몇번쨰 인지 가져옴
+			let index = $(this).index();
+			$('li').eq(index).css('background-color','yellow');
+			});
+	</script>
+</body>
+</html>

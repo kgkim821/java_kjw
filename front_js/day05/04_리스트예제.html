@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		.bg-yellow{background-color: yellow;}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>항목1</li>
+		<li>항목2</li>
+		<li>항목3</li>
+	</ul>
+	<button class="btn">버튼1</button>
+	<button class="btn">버튼2</button>
+	<button class="btn">버튼3</button>
+	<br>
+	<button class="btn_pre">이전</button>
+	<button class="btn_next">다음</button>
+	
+	<script>
+	let num = 0;
+			$('.btn').click(function(){
+			// this : each에 의해 꺼내진 요소 . each에 의해서 꺼내진 .btn 요소
+				$('li').removeClass('bg-yellow');
+				$('li').eq(index++).css('background-color','yellow');
+			
+		});
+		$('.btn-pre').click(function(index){
+			$('li').eq(index--).css('background-color','yellow');		
+		});
+
+		// 방법2. 앞 요소/ 뒤 요소가 있는지 없는지 확인해서 이동
+		$('btn-prev').click(()=>{
+			// 앞 요소의 길이가 0이 아니라면 => 앞요소가 있다.
+			let index;
+			if($('.bg-yellow').prev().length != 0){
+				let index = $('.bg-yellow').prev().index();
+				$('.btn').eq(index).click();
+			}else{
+				let index = $('li').length -1;
+			}$('.btn').eq(index).click();
+		});
+		
+		$('btn-next').click(()=>{
+			let index;
+			if($('.bg-yellow').next().length != 0){
+				let index = $('.bg-yellow').next().index();
+				$('.btn').eq(index).click();
+			}else{
+				let index = 0;
+			}$('.btn').eq(index).click();
+		});
+
+		
+	</script>
+</body>
+</html>

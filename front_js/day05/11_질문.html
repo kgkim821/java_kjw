@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+</head>
+<style>
+	
+</style>
+<body>
+	<button class="btn-add">질문 추가</button><br>
+	<div class="box">
+		<input type="text"  value="질문"><br>
+		<input type="text" value="답변내용"><br>
+	<button class="btn-enter">질문등록</button>
+	</div>
+	<script>
+		$('.btn-add').click(function(){
+			let input =`<input type="text" value="질문"><br><input type="text" value="답변내용"><br>`;
+			$('.btn-enter').before(input);
+		});
+	</script>
+</body>
+</html>

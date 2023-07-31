@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>버튼 클릭</title>
+	<script src="../js/jquery.min.js"></script>
+	<style>
+		.box1{
+			height: 300px; width: 400px; border: 3px solid black;
+		background-color: blue; display: none;
+		}
+		.box2{
+			height: 300px; width: 400px; border: 3px solid black;
+			background-color: orange;  display: none;
+		}
+	</style>
+</head>
+<body>
+	<button class="btn1" data-target=".box1">box1</button>
+	<button class="btn2" data-target=".box2">box2</button>
+	<select name="" id="">박스1, 박스2</select>
+	<div class="container">
+		<div class="box1" ></div>
+		<div class="box2" ></div>
+	</div>
+<script>
+	/*$('.btn').click(function(){
+		let target = $(this).data('target');
+		$('.box').hide();
+		$(target).show();
+		// $('.box').css('background-color','blue')
+	});*/
+
+	$('btn').click(function(){
+		let index = $(this).index() - 1;
+		console.log(index);
+		$('.box').hide();
+		$('.box').eq(index).show();
+		});
+</script>
+</body>
+</html>

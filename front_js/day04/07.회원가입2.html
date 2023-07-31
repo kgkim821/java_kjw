@@ -27,71 +27,70 @@
 			<div class="form-group">
 				<input type="password" class="form-control" name="pw" placeholder="비번" id="password">
 			</div>
-			<label class="error" id="error-id"></label>
+			<label class="error" id="error-pw"></label>
 			<div class="form-group">
 				<input type="password" class="form-control" name="pw2" placeholder="비번확인">
 			</div>
-			<label class="error" id="error-id"></label>
+			<label class="error" id="error-pw2"></label>
 			<div class="form-group">
 				<input type="text" class="form-control" name="email" placeholder="이메일">
 			</div>
-			<div class="error-email"></div>
+			<label class="error" id="error-email"></label>
 			<button class="btn btn-outline-success col-12">회원가입</button>
 		</form>
 	</div>
 	<script>
 		
 		let option = {
-			// rules : 유효성판별을 위한 규칙 ,최소길이 , 최대길이 , 정규표현식 , 요소 비교(비번),이메일
-		rules : {
-			/* name : {}*/
-			id:{
-				required : true,
+			// relues : 유효성 판변을 위한 규칙, 최소길이, 최대길이, 정규표현식, 값비교(비번), 이메일
+			rules : {
+				/* name : {}*/
+				id : {
+					required : true,
+					regex : /^\w{8,13}$/
+				},
+				pw : {
+					required : true,
+					regex : /^[a-zA-Z0-9!@#$]{8,20}$/
+				}, 
+				pw2 : {
+					required : true,
+					equalTo : password
+				}, 
+				email : {
+					required : true,
+					email : true
+				}
 			},
-			pw:{
-				required : true,
-			},
-			pw2:{
-				required : true,
-				equalTo : password
-			
-			},
-			email:{
-				required : true,
-				email : true
-			}
-		}	,
-		messages: {
-			id:{
-				required : '아이디는 필수 항목입니다.',
-			},
-			pw:{
-				required : '비번은 필수 항목입니다.',
-			},
-			pw2:{
-				required : '비번은 필수 항목입니다.',
-				equalTo : '비번은 필수 항목입니다.'
-			
-			},
-			email:{
-				required : '비번은 필수 항목입니다.',
-				email:'비번은 필수 항목입니다.'
-			}
+			messages : {
+				id : {
+					required : '아이디는 필수항목입니다.',
+					regex : '아이디는 영문,숫자를 포함하며 8~13자이어야 합니다.'
+				},
+				pw : {
+					required : '비번은 필수항목입니다.',
+					regex : '비번은 영문,숫자, !@#$를 포함하며 8~20자이어야 합니다.'
+				}, 
+				pw2 : {
+					required : '비번확인은 필수항목입니다.',
+					equalTo : '비밀번호와 일치하지 않습니다.'
+				}, 
+				email : {
+					required : '이메일은 필수항목입니다.',
+					email : '이메일 형식에 맞지 않습니다.'
+				}
 			}
 		};
+		$("form").validate(option);
 
-    $("form").validate({
-
-		});
-
-$.validator.addMethod(
-    "regex",
-    function(value, element, regexp) {
-        var re = new RegExp(regexp);
-        return this.optional(element) || re.test(value);
-    },
-    "Please check your input."
-);
+		$.validator.addMethod(
+			"regex",
+			function(value, element, regexp) {
+				var re = new RegExp(regexp);
+				return this.optional(element) || re.test(value);
+			},
+			"Please check your input."
+		);
 	</script>
 </body>
 </html>

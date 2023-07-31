@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+</head>
+<body>
+	<button class="btn-add">추가</button>
+	<div class="box"></div>
+	<script>
+		/*
+		//append 이용
+		$('.btn-add').click(function(){
+			let input =`<input type="text"><br>`;
+			$('.box').append(input);
+		});*/
+// //before 이용
+// 		$('.btn-add').click(function(){
+// 			let input =`<input type="text"><br>`;
+// 			$('.box').before(input);
+// 		});
+
+	$('.btn-add').click(function(){
+		let input =`<br><input type="text">`;
+		let html = $('.box').html();
+		$('.box').html(html+input);
+	})
+
+	</script>
+</body>
+</html>
