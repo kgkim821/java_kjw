@@ -1,0 +1,114 @@
+package db.day3.board.controller;
+
+import java.util.List;
+import java.util.Scanner;
+
+import db.day3.board.service.BoardService;
+import db.day3.board.service.BoardServiceImp;
+import db.day3.board.vo.BoardVO;
+
+public class BoardController {
+
+	
+	private BoardService boardService = new BoardServiceImp();
+	
+	public void run() {
+		int menu;
+		final int EXIT =5;
+		Scanner sc = new Scanner (System.in);
+		
+		do {
+			printMenu();
+			menu = sc.nextInt();
+			runMenu(menu);
+			
+		}while(menu != EXIT);
+	}
+
+	private void runMenu(int menu) {
+		switch(menu) {
+		case 1 :
+			insertBoard();
+			break;
+		case 2 :
+			updateBoard();
+			break;
+		case 3 :
+			deleteBoard();
+			break;
+		case 4 :
+			selectAllBoard();
+			break;
+		case 5 :
+			System.out.println("[뒤로가기]");
+			break;
+		default:
+			System.out.println("[잘못된 메뉴 입력]");
+		}
+
+	}
+
+	private void selectAllBoard() {
+//		전체 게시글을 번호 제목 작성자아이디순으로 출력
+		List<BoardVO> boardList = boardService.getBoardList();
+		for(BoardVO tmp : boardList) {
+			System.out.println(tmp);
+		}
+	}
+
+	private void deleteBoard() {
+		
+	}
+
+	private void updateBoard() {
+		//수정할 게시글 정보(게시글 번호, 제목)
+	Scanner sc = new Scanner(System.in);
+		System.out.println("수정할 게시글 번호 : ");
+		int num = sc.nextInt();
+		System.out.print("수정할 게시글 제목:");
+		sc.nextLine();
+		String title = sc.nextLine();
+		
+		BoardVO board = new BoardVO(num, title, null);
+		BoardService.updateBoard();
+		//게시글 번호를 이용하여 게시글을 가져옴
+		
+		//게시글이 없으면 종료
+		
+		//있으면 가져온 게시글의 제목을 수정
+		
+		//다오에게 게시글을 수정하라고 시킴
+		
+	}
+
+	private void insertBoard() {
+		Scanner sc = new Scanner(System.in);
+		//게시글 정보를 입력(제목, 작성자아이디)
+		System.out.println("제목 :");
+		String title = sc.nextLine();
+		System.out.println("아이디 :");
+		String id = sc.next();
+		
+		BoardVO board = new BoardVO(title,id);
+		
+		if(boardService.insertBoard(board)) {
+			System.out.println("[게시글 등록 성공]");
+		}else {
+			System.out.println("[게시글 등록 실패]");
+		}
+		
+	}
+
+	private void printMenu() {
+		System.out.println("====게시판메뉴=======");
+		System.out.println("1.게시글 등록");
+		System.out.println("2. 게시글 수정");
+		System.out.println("3. 게시글 삭제");
+		System.out.println("4. 게시글 조회");
+		System.out.println("5. 뒤로가기");
+		System.out.println("==============");
+		System.out.println("메뉴 선택 :");
+	}
+	}
+
+
