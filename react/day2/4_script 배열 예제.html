@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>state 배열 예제</title>
+	</head>
+<body>
+	<script>
+		let arr = ['apple', 'banana'];
+		
+		//arr.push('orange'); 뒤에 추가
+ 		//arr.unshift('orange')	 앞에 추가
+		arr = [...arr,'orange'];
+		arr = ['orange',...arr]
+		console.log(arr);
+	</script>
+</body>
+</html>
